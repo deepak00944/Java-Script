@@ -1,1 +1,0 @@
-learnt about the dom today as there is no code for that because I have practised that on browser console so I am adding this file 
