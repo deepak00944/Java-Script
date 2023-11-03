@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+    <style>
+        body{
+            background-color: #212121;
+        }
+        img{
+            height: 150px;
+            width: 150px;
+            object-fit:cover;
+        }
+        a{
+            color: aliceblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="images">
+        <ul>
+            <li><img id="photshop"src="https://images.pexels.com/photos/17636489/pexels-photo-17636489/free-photo-of-man-in-hat-and-with-backpack-standing-with-hills-behind.jpeg" alt="photshop"></li>
+            <li><img id="map" src="https://images.pexels.com/photos/1252500/pexels-photo-1252500.jpeg" alt=""></li>
+            <li><img id="" src="https://images.pexels.com/photos/5227440/pexels-photo-5227440.jpeg" alt=""></li>
+            <li><img id="ghanta" src="https://images.pexels.com/photos/2249780/pexels-photo-2249780.jpeg" alt=""></li>
+            <li><a id="google" href="https://www.google.com/">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    //there are many approaches to use the event listner but they are not feasiable, doesnot give more features and propagation but the below approach is best and mostly we will use this only
+    //jQuery - on
+    //attachEvent() used in internet explorer
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcEle, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+
+    //event propogation has two context first one is event bubbling(default, (false)) and second is event caapturing
+    //jab bhi element ya event tack karta h event ko from inside to outside vo hota h event propogation or usko bubbling khete h 
+    //capturing aata h uppar se niche ki aur lets see example for both the cases
+
+    //for bubblingin this case the maps event will work first and then it will move to upper on that is ul 
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log('cicked inside the ul');
+    // },false)
+    // document.querySelector('#map').addEventListener('click', function(e){
+    //     console.log('cliked on map')
+    //     e.stopPropagation(); //this will not bubble to the upper one
+    // }, false)
+
+    //for capturing jo ke uppar se niche aayega isme phele wala code phele chalega 
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log('cicked inside the ul');
+    // },true)
+    // document.querySelector('#map').addEventListener('click', function(e){
+    //     console.log('cliked on map')
+    // }, true)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     console.log('google clicked');
+    //     e.preventDefault()
+    // }, false)
+
+
+    //to remove the images with the bullets 
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+</script>
+</html>
