@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: gilroy;
+        }
+        .card{
+            height: 50vh;
+            width: 20vw;
+            border: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+        }
+        #profile>img{
+            height: 15vh;
+            border-radius: 50%;
+        }
+        #info{
+            line-height: 10px;
+        }
+        label{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: black;
+        }
+        p{
+
+        }
+
+    </style>
+</head>
+<body style="background-color: #212121; display: flex; justify-content: center; align-items: center;"> 
+    <div class="card">
+        <div id="profile"></div>
+        <div id="info">
+            <h4 id="name"></h4>
+            <label >Id: <p id="Id"></p></label>
+            <label >Repo: <p id="repo"></p></label>
+            <label >Following: <p id="following"></p></label>
+            <label >Followers: <p id="followers"></p></label>
+            <label ></label>
+        </div>
+    </div>
+</body>
+<script>
+    const apiURl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    // console.log("Unsent", xhr.readyState);
+    xhr.open('GET',apiURl )
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // To convert the data to object or jason because data comes in string
+            console.log(data);
+
+            const Id = document.getElementById('Id');
+            Id.innerText = `${data.id}`;
+        
+            const repo = document.getElementById('repo');
+            repo.innerText = `${data.public_repos}`;
+        
+            const profile = document.getElementById('profile');
+            profile.innerHTML = `<img src= "${data.avatar_url}" >`;
+
+            const name = document.getElementById('name');
+            name.innerHTML = data.name;
+
+            const following =document.getElementById('following') ;
+            following.innerHTML = data.following
+            
+            const followers = document.getElementById('followers');
+            followers.innerHTML = data.followers
+        }
+    }
+    xhr.send();
+</script>
+</html>
+
+<!-- 
+    console log is debugging tool technically it is not a part of js
+    document is not a part of js 
+    js run in c++ and js is wrapper of that 
+    console log is in v8 engine
+    It is publically available on github "github.com/v8/v8"
+ -->
