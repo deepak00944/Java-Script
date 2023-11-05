@@ -1,21 +1,23 @@
 #Defalut javaScript
 Java Script is a synchronous (execute code one after one)
-It is single threaded
+It is single threaded but doesnt let us feel
 
 
-Execution Context 
+#Execution Context 
 --> execute one line of code at a time
-console.log() --> 1 
-console.log() --> 2     //each operation waits for the last one to complete before executing  
-
+|console.log() --> 1 
+|console.log() --> 2     //each operation waits for the last one to complete before executing  
 then sent to the call stack and memory heap
 
-Blocking code vs Non Blocking code 
+#Blocking code vs Non Blocking code 
 --> Blocking code
 -Blocks the code 
 -Example We want ki hamra code file ko read kare but code cannot read the file directly so that will go to kernel and request kernel to read the sync file that time kernel may be busy with some other work so for that time code will be block
 
 -->Non BLocking code
-- In this case we can program can read the async file air usi time we can do our other work that means vo code ko block nhi karta hai 
+- In this case we can program can read the async file aur usi time we can do our other work that means vo code ko block nhi karta hai 
+-Registration 
 
 We cannot say that non Blocking case is best, totaly depends on use cases 
+
+Diagram
