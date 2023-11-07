@@ -26,7 +26,7 @@ console.log(typeof booleanIsLoggedIn); // boolean
 
 /*
     "hitesh" =>  true
-    " " => false 
+    "" => false 
     1 => true
     0 => false
 */

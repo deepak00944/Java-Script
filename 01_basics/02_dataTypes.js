@@ -27,3 +27,4 @@ console.log(typeof age);
 console.log(typeof null) // output object *******
 console.log(typeof undefined); // undefined 
 console.log(typeof Symbol) // function
+
