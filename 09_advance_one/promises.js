@@ -3,6 +3,7 @@
 // "jo task promise ko diya gaya h vo queue mai lagne ke baad immediate complete nhi hota vo "
 //History --> Q or BLue bird 
 // Performance of promise native is higher or better then the Q or BLue bird although memory consuption is also high in case of promises 
+// call back hail ko reduce karta h 
 
 //Creating Promises
 
