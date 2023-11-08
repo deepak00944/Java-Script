@@ -128,5 +128,5 @@ Polymorphism allows objects of different classes to be treated as objects of a c
 javascript ko yadi kuch dhundna hai toh uppar tak jaat rehta h matlab ke parent,grand parent or jab tak null value na mile tab tak vo chalta rhega
 
 ```javascript 
-this, new, class, etc sab isi se ho rha h.
+this, new, class, etc sab isi se ho rha h
 ```  
