@@ -18,7 +18,7 @@
 // // console.log(`user power: ${power}`); //power is not defined
 // console.log(`user power: ${power}`); //it will execute if we use var that is why we dont use it 
 
-
+ 
 
 // shortend way to  write in general we do not write this because it is non readalbe code
 // const balance = 1000;
