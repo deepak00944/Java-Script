@@ -20,4 +20,4 @@ then sent to the call stack and memory heap
 
 We cannot say that non Blocking case is best, totaly depends on use cases 
 
-Diagram
+Further we can understand by the Diagram which is uploaded in this file only🤫
