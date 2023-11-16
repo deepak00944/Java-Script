@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #414141;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+
+<script>
+    // Lexical Scoping
+    // function outer(){
+    //     let username= "deepak"
+    //     function inner(){
+    //         let item = "icecreame"
+    //         console.log("Inner: ", username);
+    //         // console.log("innerTwo: ",food);   //error inner mai functions share nhi karenge sirf outer function ki properties access kar sakte h and outer function cannot access the properties of inner functions
+    //     }
+    //     inner()
+    //     function innerTwo() {
+    //         let food = "Burger"
+    //         console.log("Inner Two: ",username);
+    //     }
+    //     innerTwo()
+    //     // console.log("Outer",item);
+    // }
+    // outer();
+    // // console.log(username);
+
+    // CLOSURE
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+    //is function ke andar humne displayName ko retutn kiya h it does not mean ke sirf displayName hi chalega vo uske scope sirf scope nhi lexical scope ko bhi saath m laayega (execute karega) matlab outer function bhi chalega humne outer function run kara h iska matalb ye nhi ki uska refrence khatam yha par memory ka concept aa jaayega 
+
+
+    //Example
+
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    // in the below example if we are not using the concept of clouser toh hum ye nhi kar paate kyuki vo function phlee hi execute kar jaata
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+        document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById("orange").onclick = clickHandler("orange")
+    document.getElementById("green").onclick = clickHandler("green")
+
+</script>
+
+</html>
