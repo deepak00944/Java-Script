@@ -1,6 +1,6 @@
 "use strict"; //treat all JS code as newer version
 
-// alert(3+3)  //it can directly use in browser but we are using node js
+// alert(3+3)  //it can directly use in browser but we are using node js so it cannot be use here
 
 // Perfer "mdn" for documentation 
 
